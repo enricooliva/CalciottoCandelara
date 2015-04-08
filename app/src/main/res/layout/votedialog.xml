@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+    <TextView
+        android:id="@+id/rank_dialog_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:text="@+id/rank_dialog_text1"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+<RatingBar
+        android:id="@+id/dialog_ratingbar"
+        style="?android:attr/ratingBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:focusable="true"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="2"
+        android:stepSize="0.5" />
+
+<TextView
+        android:id="@+id/rank_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:text="@+id/rank_text"
+        android:textSize="20dp" />
+
+
+
+    <TableLayout
+        android:id="@+id/llh"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+
+
+
+
+
+            <Button
+                android:id="@+id/rank_dialog_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:text="@string/Confirm" />
+
+
+
+            <Button
+                android:id="@+id/rank_cancel_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:text="@string/cancel" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

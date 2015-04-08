@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.enrico.calciottocandelara" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".CalciottoCandelaraStartPage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PlayersList"
+            android:label="@string/title_activity_players_list" >
+        </activity>
+        <activity
+            android:name=".TeamRate"
+            android:label="@string/title_activity_team"
+            android:parentActivityName=".CalciottoCandelaraStartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.enrico.calciottocandelara.CalciottoCandelaraStartPage" />
+        </activity>
+        <activity
+            android:name=".PlayersActivity"
+            android:label="@string/title_activity_players"
+            android:parentActivityName=".CalciottoCandelaraStartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.enrico.calciottocandelara.CalciottoCandelaraStartPage" />
+        </activity>
+        <activity
+            android:name=".GamesActivity"
+            android:label="@string/title_activity_game"
+            android:parentActivityName=".CalciottoCandelaraStartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.enrico.calciottocandelara.CalciottoCandelaraStartPage" />
+        </activity>
+        <activity
+            android:name=".TeamRateActivity"
+            android:label="@string/title_activity_team_rate"
+            android:parentActivityName=".CalciottoCandelaraStartPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.enrico.calciottocandelara.CalciottoCandelaraStartPage" />
+        </activity>
+        <provider
+            android:authorities="com.enrico.calciottocandelara.app"
+            android:name=".data.DataProvider" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calci8 Candelara</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="hello_world">Calci8 Candelara</string>
+    <string name="menu_settings">Impostazioni</string>
+    <string name="title_activity_calciotto_candelara_start_page">Calci8 Candelara</string>
+    <string name="menuitem_palyers">Giocatori</string>
+    <string name="title_activity_players_list">Lista giocatori</string>
+    <string name="title_activity_games_list">Lista partite</string>
+    <string name="title_activity_team">Indicatore squadra</string>
+    <string name="vote">Vota</string>
+    <string name="cancel">Cancella</string>
+    <string name="Confirm">Conferma</string>
+    <string name="addvote">Vota</string>
+    <string name="menuitem_games">Partite</string>
+    <string name="goalplayer">Marcatori</string>
+    <string name="menuitem_team">Squadra</string>
+    <string name="menuitem_info">Info</string>
+    <string name="title_activity_players">Giocatori</string>
+    <string name="title_activity_game">Partite</string>
+    <string name="title_activity_team_rate">Andamento</string>
+
+</resources>
