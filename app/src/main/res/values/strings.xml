@@ -21,5 +21,6 @@
     <string name="title_activity_players">Giocatori</string>
     <string name="title_activity_game">Partite</string>
     <string name="title_activity_team_rate">Andamento</string>
+    <string name="menuitem_logo">Logo</string>
 
 </resources>
