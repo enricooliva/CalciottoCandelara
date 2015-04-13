@@ -7,6 +7,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.text.TextUtils;
 
 public class DataProvider extends ContentProvider {
 
@@ -176,6 +177,7 @@ public class DataProvider extends ContentProvider {
                  rowsDeleted = db.delete(
                          DataContract.PlayerEntry.TABLE_NAME, selection, selectionArgs);
                  break;
+
              case GAME:
                  rowsDeleted = db.delete(
                          DataContract.GameEntry.TABLE_NAME, selection, selectionArgs);
@@ -201,6 +203,23 @@ public class DataProvider extends ContentProvider {
              case PLAYER:
                  rowsUpdated = db.update(
                          DataContract.PlayerEntry.TABLE_NAME, values, selection, selectionArgs);
+                 break;
+             case PLAYER_ID:
+                 String id = uri.getLastPathSegment();
+                 if (TextUtils.isEmpty(selection)) {
+                     rowsUpdated = db.update(DataContract.PlayerEntry.TABLE_NAME,
+                             values,
+                             DataContract.PlayerEntry.COLUMN_NUMBER + "=" + id,
+                             null);
+                 } else {
+                     rowsUpdated = db.update(DataContract.PlayerEntry.TABLE_NAME,
+                             values,
+                             DataContract.PlayerEntry.COLUMN_NUMBER + "=" + id
+                                     + " and "
+                                     + selection,
+                             selectionArgs);
+                 }
+
                  break;
              case GAME:
                  rowsUpdated = db.update(

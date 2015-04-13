@@ -1,6 +1,7 @@
 package com.enrico.calciottocandelara;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.enrico.calciottocandelara.data.DataContract;
 import com.enrico.calciottocandelara.data.Player;
 
 /**
@@ -32,7 +34,17 @@ public class Vote {
         LinearLayout parent = (LinearLayout) ratingBar.getParent();
         ratingBar.setRating((float) item.getRate());
         TextView label = (TextView) parent.findViewById(R.id.rate);
-        label.setText(String.format("Punteggio: %.02f", item.getRate()) + String.format(" Voti: %d", item.getNumberVotes()));
+
+        ContentValues values = new ContentValues();
+        values.put(DataContract.PlayerEntry.COLUMN_RATE, item.getRate());
+        values.put(DataContract.PlayerEntry.COLUMN_NUMBER_VOTE, item.getNumberVotes());
+
+        int rowsUpdated = context.getContentResolver().update(DataContract.PlayerEntry.buildPlayerUri(item.getNumber())
+                ,values
+                ,""
+                , null);
+
+        //label.setText(String.format("Punteggio: %.02f", item.getRate()) + String.format(" Voti: %d", item.getNumberVotes()));
         item.updateDatabase();
 
     }
