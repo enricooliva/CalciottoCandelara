@@ -22,5 +22,15 @@
     <string name="title_activity_game">Partite</string>
     <string name="title_activity_team_rate">Andamento</string>
     <string name="menuitem_logo">Logo</string>
-
+    <string name="content_authority">com.enrico.calciottocandelara.app</string>
+    <string name="sync_account_type">com.enrico.calciottocandelara.account</string>
+    <string-array name="planets_array">
+        <item>Giocatori</item>
+        <item>Partite</item>
+        <item>Andamento</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
 </resources>

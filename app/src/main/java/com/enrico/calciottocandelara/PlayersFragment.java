@@ -83,6 +83,7 @@ public  class PlayersFragment extends Fragment implements LoaderManager.LoaderCa
     }
 
     private void updatePlayer() {
+
         new FetchPlayerTask(getActivity()).execute("");
     }
 
@@ -95,7 +96,7 @@ public  class PlayersFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public void onStart() {
         super.onStart();
-        updatePlayer();
+        //updatePlayer();
     }
 
     @Override

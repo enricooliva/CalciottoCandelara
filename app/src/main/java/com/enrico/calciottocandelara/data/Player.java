@@ -1,8 +1,8 @@
 package com.enrico.calciottocandelara.data;
 
 import android.database.Cursor;
+
 import com.enrico.calciottocandelara.data.DataContract.PlayerEntry;
-import com.enrico.calciottocandelara.Utility;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -80,10 +80,11 @@ public class Player {
 		rate= ((rate*(numbervote-1))+rating) / numbervote;
 	}
 	
-	public void updateDatabase()
-	{
-		new Utility(null).execute(new String[]{"http://www.enricooliva.com/setRateValue.php",String.valueOf(number),String.format("%.02f", rate),String.valueOf(numbervote)});
-	}
+	//public void updateDatabase()
+	//{
+
+		//new Utility(null).execute(new String[]{"http://www.enricooliva.com/setRateValue.php",String.valueOf(number),String.format("%.02f", rate),String.valueOf(numbervote)});
+	//}
 
 	public int getNumberVotes() {
 		// TODO Auto-generated method stub

@@ -76,10 +76,10 @@ public class Utility extends AsyncTask<String,Object,String>  {
 		}catch(Exception e){							
 		        Log.e("log_tag", "Error in http connection "+e.toString());		        
 		}
-		
+
 		return this.getResult(is);
-		
-		
+
+
 	}
 	
 	

@@ -1,15 +1,14 @@
 package com.enrico.calciottocandelara;
 
 import android.app.Dialog;
-import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.enrico.calciottocandelara.data.DataContract;
 import com.enrico.calciottocandelara.data.Player;
 
 /**
@@ -35,17 +34,23 @@ public class Vote {
         ratingBar.setRating((float) item.getRate());
         TextView label = (TextView) parent.findViewById(R.id.rate);
 
-        ContentValues values = new ContentValues();
-        values.put(DataContract.PlayerEntry.COLUMN_RATE, item.getRate());
-        values.put(DataContract.PlayerEntry.COLUMN_NUMBER_VOTE, item.getNumberVotes());
+//        ContentValues values = new ContentValues();
+//        values.put(DataContract.PlayerEntry.COLUMN_RATE, item.getRate());
+//        values.put(DataContract.PlayerEntry.COLUMN_NUMBER_VOTE, item.getNumberVotes());
+//
+//        int rowsUpdated = context.getContentResolver().update(DataContract.PlayerEntry.buildPlayerUri(item.getNumber())
+//                ,values
+//                ,""
+//                , null);
 
-        int rowsUpdated = context.getContentResolver().update(DataContract.PlayerEntry.buildPlayerUri(item.getNumber())
-                ,values
-                ,""
-                , null);
+        Intent voteService = new Intent(context, VoteService.class);
+        voteService.putExtra(VoteService.NUMBER, item.getNumber());
+        voteService.putExtra(VoteService.NUMBERVOTE, item.getNumberVotes());
+        voteService.putExtra(VoteService.RATE, (float)item.getRate());
+        context.startService(voteService);
 
         //label.setText(String.format("Punteggio: %.02f", item.getRate()) + String.format(" Voti: %d", item.getNumberVotes()));
-        item.updateDatabase();
+       // item.updateDatabase();
 
     }
 
